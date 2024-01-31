@@ -1,13 +1,15 @@
 from app import assistant_chain
-from langchain.prompts import ChatPromptTemplate
-from langchain.chat_models import ChatOpenAI
-from langchain.schema.output_parser import StrOutputParser
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_google_vertexai import ChatVertexAI
+from langchain_core.output_parsers import StrOutputParser
 import pytest
 
 
 def create_eval_chain(
     agent_response,
-    llm=ChatOpenAI(model="gpt-3.5-turbo", temperature=0),
+    llm=ChatVertexAI(project='plucky-agent-412507', 
+                     model_name="gemini-pro", convert_system_message_to_human=True, 
+                     temperature=0),
     output_parser=StrOutputParser(),
 ):
     delimiter = "####"

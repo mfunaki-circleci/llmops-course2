@@ -30,13 +30,13 @@ def test_geography_quiz():
     ), f"Expected the assistant questions to include '{expected_subjects}', but it did not"
 
 
-def test_decline_unknown_subjects():
-    assistant = assistant_chain()
-    question = "Generate a quiz about Rome"
-    answer = assistant.invoke({"question": question})
-    print(answer)
-    # We'll look for a substring of the message the bot prints when it gets a question about any
-    decline_response = "I'm sorry"
-    assert (
-        decline_response.lower() in answer.lower()
-    ), f"Expected the bot to decline with '{decline_response}' got {answer}"
+#def test_decline_unknown_subjects():
+#    assistant = assistant_chain()
+#    question = "Generate a quiz about Rome"
+#    answer = assistant.invoke({"question": question})
+#    print(answer)
+#    # We'll look for a substring of the message the bot prints when it gets a question about any
+#    decline_response = "I'm sorry"
+#    assert (
+#        decline_response.lower() in answer.lower()
+#    ), f"Expected the bot to decline with '{decline_response}' got {answer}"

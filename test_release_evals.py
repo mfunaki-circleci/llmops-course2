@@ -4,6 +4,8 @@ from langchain_google_vertexai import ChatVertexAI
 from langchain_core.output_parsers import StrOutputParser
 import pytest
 
+import google.auth
+credentials, project_id = google.auth.default()
 
 def create_eval_chain(
     agent_response,

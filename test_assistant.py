@@ -5,6 +5,8 @@ from dotenv import load_dotenv, find_dotenv
 
 _ = load_dotenv(find_dotenv())
 
+import google.auth
+credentials, project_id = google.auth.default()
 
 def test_science_quiz():
     assistant = assistant_chain()
